@@ -1,13 +1,16 @@
 package com.android_poc.newyorktimesproject.pojos;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
-@Entity(tableName = "NytCustomDetailObj")
+@Entity(tableName = "NytCustomDetailObj",indices = @Index(value = {"title"},unique = true))
 public class NytCustomDetailObj {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
+    @ColumnInfo(name = "title")
     private String title;
     private String description;
     private String imgUrl;
