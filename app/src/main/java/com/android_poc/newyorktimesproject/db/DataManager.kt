@@ -1,14 +1,16 @@
 package com.android_poc.newyorktimesproject.db
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.android_poc.newyorktimesproject.pojos.NytCustomDetailObj
+import com.android_poc.newyorktimesproject.utils.AppConstants.Companion.TAG
 import io.reactivex.Completable
 import io.reactivex.schedulers.Schedulers
 
 
 class DataManager(application: Application) {
-    private var nytDbHelper: NytDbHelper
+        private var nytDbHelper: NytDbHelper
 
     init {
         nytDbHelper = NytDbHelper.getInstance(application)
@@ -20,7 +22,7 @@ class DataManager(application: Application) {
             for (nytCustomObj in nytCustomDetailObjList)
                 nytDbHelper.getNytCustomObjDao().insertCustomDetailObjIntoTbl(nytCustomObj)
         }.subscribeOn(Schedulers.io()).doOnComplete {
-
+            Log.d(TAG, "insertSongAttributesIntoDB: ")
         }.subscribe()
 
     }
