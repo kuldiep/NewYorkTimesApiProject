@@ -11,7 +11,7 @@ import io.reactivex.schedulers.Schedulers
 
 
 class DataManager(application: Application) {
-        private var nytDbHelper: NytDbHelper
+    private var nytDbHelper: NytDbHelper
 
     init {
         nytDbHelper = NytDbHelper.getInstance(application)

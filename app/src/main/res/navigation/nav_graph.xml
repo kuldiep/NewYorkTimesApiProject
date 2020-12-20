@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nytArticleListFragment">
+
+    <fragment
+        android:id="@+id/nytArticleListFragment"
+        android:name="com.android_poc.newyorktimesproject.ui.NytArticleListFragment"
+        android:label="fragment_nyt_article_list"
+        tools:layout="@layout/fragment_nyt_article_list" />
+</navigation>
